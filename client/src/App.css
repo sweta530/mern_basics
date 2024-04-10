@@ -1,0 +1,60 @@
+
+
+*{
+  box-sizing: border-box;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+
+}
+.contact-listing {
+  width: 60%;
+}
+.contact-details {
+  width: 40%;
+  margin-top: 150px;  
+}
+.contact-header-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin:10px;
+}
+.contact-header {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+.search-input {
+  width: 40%;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 10px;
+  padding-left: 25px;
+  background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+  background-size: 20px;
+  background-color: rgb(230, 230, 230);
+
+}
+.contact-list-table {
+  margin: 10px;
+}
+.contact-form {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.contact-form input {
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+}
+.contact-form span {
+  color: red;
+}
