@@ -1,13 +1,13 @@
 const { isEmpty } = require('../../utility/index')
 
-function logInValidation(params) {
+function loginValidation(params) {
     let error = {}
 
     if (isEmpty(params.email)) {
-        error.first_name = "Field should not be empty";
+        error.title = "Field should not be empty";
     }
     if (isEmpty(params.password)) {
-        error.phone = "Field should not be empty";
+        error.price = "Field should not be empty";
     }
 
     return {
@@ -16,4 +16,4 @@ function logInValidation(params) {
     };
 }
 
-module.exports.logInValidation = logInValidation
+module.exports.loginValidation = loginValidation

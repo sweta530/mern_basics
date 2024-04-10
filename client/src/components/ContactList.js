@@ -165,7 +165,7 @@ export default function ContactList() {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredContacts.map((contact) => (
+                            {/* {filteredContacts.map((contact) => (
                                 <tr key={contact._id} >
                                     <td>
                                         <input
@@ -212,7 +212,7 @@ export default function ContactList() {
                                         </IconButton>
                                     </td>
                                 </tr>
-                            ))}
+                            ))} */}
                         </tbody>
                     </table>
                 </div>

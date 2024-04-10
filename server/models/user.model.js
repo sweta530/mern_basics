@@ -1,26 +1,24 @@
 const mongoose = require('mongoose')
 require('./connection');
-const bcrypt = require("bcryptjs");
+const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
     role: {
         type: String,
-        required: [true, "Your email address is required"],
+        default: 'user',
         enum: ['admin', 'user']
+    },
+    phone: {
+        type: String,
     },
     email: {
         type: String,
-        required: [true, "Your email address is required"],
-        unique: true,
-    },
-    mobile: {
-        type: String,
-        required: [true, "Your phone number is required"],
+        required: [true, "Your email is required"],
         unique: true,
     },
     name: {
         type: String,
-        required: [true, "Your username is required"],
+        required: [true, "Your name is required"],
     },
     password: {
         type: String,
@@ -28,9 +26,20 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-userSchema.pre("save", async function () {
-    this.password = await bcrypt.hash(this.password, 12);
+userSchema.pre('save', async function (next) {
+    try {
+        // Generate a salt
+        const salt = await bcrypt.genSalt(10);
+        // Hash the password with the salt
+        const hashedPassword = await bcrypt.hash(this.password, salt);
+        // Replace the plain text password with the hashed one
+        this.password = hashedPassword;
+        next();
+    } catch (error) {
+        next(error);
+    }
 });
+
 
 const User = mongoose.model('users', userSchema);
 

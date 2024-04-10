@@ -58,3 +58,14 @@
 .contact-form span {
   color: red;
 }
+.login-container {
+  width: 40%;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(230, 230, 230);
+  padding: 20px;
+  padding-bottom: 40px;
+  border-radius: 15px;
+}
