@@ -23,19 +23,19 @@ export default function ContactList() {
     const [selectedContacts, setSelectedContacts] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
 
-    useEffect(() => {
-        getAllContacts()
-    }, [])
-    useEffect(() => {
-        const filtered = contacts.filter(contact =>
-            contact.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            contact.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            contact.phone.includes(searchTerm) ||
-            contact.company.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setFilteredContacts(filtered);
-    }, [searchTerm, contacts]);
+    // useEffect(() => {
+    //     getAllContacts()
+    // }, [])
+    // useEffect(() => {
+    //     const filtered = contacts.filter(contact =>
+    //         contact.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //         contact.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //         contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //         contact.phone.includes(searchTerm) ||
+    //         contact.company.toLowerCase().includes(searchTerm.toLowerCase())
+    //     );
+    //     setFilteredContacts(filtered);
+    // }, [searchTerm, contacts]);
 
     const handleInfoDialog = (contact) => {
         setInfoContact(contact)
